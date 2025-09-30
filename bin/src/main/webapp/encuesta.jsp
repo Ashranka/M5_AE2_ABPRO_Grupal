@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Encuesta de Satisfacción</title>
-     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+ 
 </head>
 <body>
 <h1>Encuesta de Satisfacción</h1>

@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultados de la Encuesta</title>
-    
 </head>
 <body>
 <h1>Resultados de la Encuesta</h1>
