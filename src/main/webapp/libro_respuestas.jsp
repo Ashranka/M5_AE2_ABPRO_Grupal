@@ -4,6 +4,9 @@
 <%@ page import="java.util.*" %>
 
 <%
+    // ============================================
+    // BACKEND: Simulación de lista de respuestas
+    // ============================================
 
     List<Map<String, Object>> respuestas = new ArrayList<>();
 
@@ -70,7 +73,12 @@
     resp7.put("comentario", "Es aceptable, cumple su función.");
     respuestas.add(resp7);
 
+    // Guardar en request
     request.setAttribute("respuestas", respuestas);
+
+    // ============================================
+    // BACKEND: Cálculo de estadísticas
+    // ============================================
 
     int totalRespuestas = respuestas.size();
     int recomiendaSi = 0;
@@ -119,10 +127,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Respuestas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h1>Lista de Respuestas de Encuestas</h1>
 
+<!-- ============================================ -->
+<!-- BACKEND: Mostrar estadísticas generales     -->
+<!-- ============================================ -->
 <div class="estadisticas">
     <h2>Estadísticas Generales</h2>
     <p><strong>Total de respuestas:</strong> ${totalRespuestas}</p>
@@ -132,6 +144,10 @@
     <p><strong>Menores de edad:</strong> ${menoresDeEdad} usuarios</p>
     <p><strong>Calificaciones bajas (&lt; 3):</strong> ${calificacionesBajas} usuarios</p>
 </div>
+
+<!-- ============================================ -->
+<!-- BACKEND: Iterar lista con c:forEach         -->
+<!-- ============================================ -->
 <h2>Detalle de Respuestas</h2>
 
 <c:choose>
@@ -190,6 +206,7 @@
             </tbody>
         </table>
 
+        <!-- Mostrar resumen de problemas detectados -->
         <c:if test="${calificacionesBajas > 0}">
             <div class="alerta">
                 <strong>¡ATENCIÓN!</strong> Hay ${calificacionesBajas} respuesta(s) con calificación baja que requieren seguimiento.

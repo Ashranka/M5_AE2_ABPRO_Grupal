@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Encuesta de Satisfacción</title>
-     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Encuesta de Satisfacción</h1>
+<form action="resultados.jsp" method="POST">
+    <h1>Encuesta de Satisfacción</h1>
 
-<!-- CAMBIO: action apunta al servlet -->
-<form action="procesarEncuesta" method="POST">
     <div class="form-group">
         <label for="nombre">Nombre del usuario:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -24,10 +23,10 @@
     <div class="form-group">
         <label>¿Recomendarías este sitio a otros?</label>
         <input type="radio" id="recomienda_si" name="recomienda" value="si" required>
-        <label for="recomienda_si" style="display: inline;">Sí</label>
+        <label for="recomienda_si">Sí</label>
 
         <input type="radio" id="recomienda_no" name="recomienda" value="no" required>
-        <label for="recomienda_no" style="display: inline;">No</label>
+        <label for="recomienda_no">No</label>
     </div>
 
     <div class="form-group">
